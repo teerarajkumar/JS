@@ -1,0 +1,46 @@
+#cbform {
+	width: 100%;
+	color: yellow;
+}
+#guesstable {
+	float: left;
+	text-align: center;
+	width: 50%;
+	color: yellow;
+}
+
+#scratchpad {
+	float: left;
+	text-align: center;
+	color: yellow;
+}
+
+#header{
+	color: yellow;
+	text-align: center;
+}
+
+#diffbox{
+	background-color: black;
+	color: yellow;
+}
+a:visited{
+	color: grey;
+}
+
+a:link {
+	color: yellow;
+}
+
+a:hover{
+	color: red;
+}
+
+body{
+	background-color: black;
+}
+
+table,th,td {
+	color: yellow;
+	background-color: black;
+}

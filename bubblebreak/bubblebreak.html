@@ -1,0 +1,159 @@
+<html>
+<head>
+    <title>index.html</title>
+    <style>
+		canvas{
+			float:left;
+			width: 1000;
+			height: 800;
+			
+		}
+		body{
+			background-color: black;
+			color: yellow;
+		}
+		
+		#playerlistbox{
+			background-color:black;
+			color: yellow;
+			border: 0;
+		}
+		
+		#scorecard{
+	
+		}
+    </style>
+    <script src="http://localhost:8080/nowjs/now.js"></script>
+    <script type="text/javascript">
+	
+	window.requestAnimFrame = (function(callback) {
+        return window.requestAnimationFrame || 
+        window.webkitRequestAnimationFrame || 
+        window.mozRequestAnimationFrame || 
+        window.oRequestAnimationFrame || 
+        window.msRequestAnimationFrame ||
+        function(callback) {
+          window.setTimeout(callback, 1000 / 60);
+        };
+      })();
+        
+	window.onload = init;
+	
+	window.onbeforeunload = function (e) {
+		now.removePlayer(localname);
+	};
+	
+	
+	var localbubblelist = [];
+	var localname;
+	
+	function doOnClick(evt)
+	{
+		breakBubble(evt.clientX,evt.clientY);
+	}
+	
+	function init()
+	{
+		do{
+			localname = prompt("Enter your name");
+		}while(localname == null);
+		width = 1000;
+		height = 800;
+		setCanvas();
+		now.ready(function(){now.playerNameUpdate(localname); GameLoop();});
+	}
+	
+	function setCanvas()
+	{
+		var c = document.getElementById('c');
+		c.addEventListener('click',doOnClick,true);
+		c.width = width;
+		c.height = height;
+		ctx = c.getContext('2d');
+	};
+	
+	
+	
+	function drawBubbleOnCanvas(xc,yc)
+	{
+		ctx.fillStyle = '#'+Math.floor(Math.random()*16777215).toString(16);  
+		ctx.beginPath();
+		ctx.arc(xc, yc, 50, 0,Math.PI*2,true);
+		ctx.stroke();
+		ctx.fill();
+		ctx.closePath();
+		
+	}
+	
+	function insideClick(x1,y1,x2,y2)
+	{
+	
+		var dist = Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+		if(dist<50)
+			return true;
+		return false;
+	}
+	
+	function breakBubble(xclick ,yclick)
+	{
+		for(var i=0;i<localbubblelist.length;i++)
+		{
+			if( insideClick(xclick , yclick , localbubblelist[i][0], localbubblelist[i][1]) )
+			{
+				now.bubblelistsplice(i,localbubblelist[i][0],localname);
+			}
+		}
+	}
+	
+	function drawBubbles()
+	{
+		for(var i=0; i<localbubblelist.length ;i++)
+		{
+			var xc = localbubblelist[i][0];
+			var yc = localbubblelist[i][1];
+			drawBubbleOnCanvas(xc,yc);
+		}
+	}
+	
+	
+	function pushBubblesArray(serverbubblelist) {
+		localbubblelist = serverbubblelist;
+	}
+	
+	now.pushPlayerList = function(playerlist)
+	{
+		var scores = "";
+		for(var i=0;i<playerlist.length;i++)
+		{
+			scores += playerlist[i][0]+" : "+playerlist[i][1]+"\n";
+		}
+		document.getElementById("playerlistbox").value = scores;
+	}
+	
+	function clear()
+	{  
+      ctx.fillStyle = "#000000";  
+      ctx.fillRect(0,0,width,height);
+    }
+    
+	function GameLoop()
+	{  
+		clear();
+		now.getBubbleList(pushBubblesArray);
+		drawBubbles();
+		requestAnimFrame(function() {
+           GameLoop();
+        });
+	}
+	
+</script>
+
+</head>
+<body>
+	<canvas id='c'></canvas>
+	<div id="scorecard">
+		Score Card</br>
+		<textarea id="playerlistbox" rows=10 cols=10></textarea>
+	</div>
+	<div id="heading"><h1>Welcome Bubble Popper!</h1></div>
+</body>

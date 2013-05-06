@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Road Fighter</title>  
+  <style>  
+  body {  
+    margin:0px;  
+    padding:0px;  
+    text-align:center;  
+    background-color:black;
+  }  
+ 
+  canvas{  
+	width: 75%;
+	height: 800;
+    outline: 0;  
+    border: 1px solid #000;  
+    margin-left: auto;  
+    margin-right: auto;  
+    
+  }  
+  table {
+	  color:red;
+  }
+  
+  #dashboard { 
+	align: center; 
+  }
+  </style>  
+  <script src="game.js"></script>  
+  </head>  
+  
+  <body onload="init()">  
+  <button onclick="init()">Restart</button>
+    <canvas id='c' tabindex='1'></canvas>    
+  
+  
+	<div id="dashboard">
+		<table align="center" border=1>
+			<tr>
+				<td>Distance covered</td>
+				<td id="distance">0/60</td>
+			</tr>
+			<tr>
+				<td>Position</td>
+				<td id="position">50/50</td>
+			</tr>
+			<tr>
+				<td>Speed</td>
+				<td id="speed">0/180</td>
+			</tr>
+			<tr>
+				<td>Health</td>
+				<td id="health">100/100</td>
+			</tr>
+			<tr>
+				<td>Time</td>
+				<td id="time">0</td>
+			</tr>
+		</table>
+	</div>
+  </body>
+</html> 

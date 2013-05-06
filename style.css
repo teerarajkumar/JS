@@ -1,0 +1,57 @@
+#header{
+	width: 100%;
+	text-align:center;
+	color: yellow;
+}
+
+#race{
+	float: left;
+	width: 32%;
+	margin: 5px;
+	text-align: center;
+	color: yellow;
+}
+
+#candb{
+	float: left;
+	width: 30%;
+	margin: 5px;
+	text-align: center;
+	color: yellow;
+}
+
+#bubble{
+	float: left;
+	width:32%;
+	margin: 5px;
+	text-align: center;
+	color: yellow;
+}
+
+#footer{
+	position: fixed;
+	bottom: 0px;
+	clear: both;
+	width: 100%;
+	margin: 10px;
+	text-align: center;
+	color: white;
+	background-color: "#001100";
+}
+
+a:visited{
+	color: blue;
+}
+
+a:link {
+	color: yellow;
+}
+
+a:hover{
+	color: red;
+}
+
+body{
+	background-color: black;
+	color: yellow;
+}

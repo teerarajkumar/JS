@@ -1,0 +1,176 @@
+<html>
+	<head>
+		<title>C and B</title>
+		<script type="text/javascript" src="script.js"></script>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div id="header">
+			<h1>It's all about cows and bulls here !</h1>
+		</div>
+		<form id="cbform">
+			Enter your guess here<br>
+			<input type="text" id="wordbox"></input>
+		</form>
+		<div id="guesstable">
+		<table id="tbl">
+			<tr>
+				<th>GuessNo</th>
+				<th>Word</th>
+				<th>Cows</th>
+				<th>Bulls</th>
+			</tr>
+			<tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr>
+			<tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr>
+			</tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr></tr><tr>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+				<td id></td>
+			</tr>
+		</table>
+		</div>
+		<div id="scratchpad">
+			Scratch pad
+			<table id="scratchtable" border=1 cellpadding=10>
+				<tr>
+					<td onclick="alpha(this)">a</td>
+					<td onclick="alpha(this)">b</td>
+					<td onclick="alpha(this)">c</td>
+					<td onclick="alpha(this)">d</td>
+					<td onclick="alpha(this)">e</td>
+					<td onclick="alpha(this)">f</td>
+					<td onclick="alpha(this)">g</td>
+					<td onclick="alpha(this)">h</td>
+					<td onclick="alpha(this)">i</td>
+					<td onclick="alpha(this)">j</td>
+					<td onclick="alpha(this)">k</td>
+					<td onclick="alpha(this)">l</td>
+					<td onclick="alpha(this)">m</td>
+				</tr>
+				<tr>
+					<td onclick="alpha(this)">n</td>
+					<td onclick="alpha(this)">o</td>
+					<td onclick="alpha(this)">p</td>
+					<td onclick="alpha(this)">q</td>
+					<td onclick="alpha(this)">r</td>
+					<td onclick="alpha(this)">s</td>
+					<td onclick="alpha(this)">t</td>
+					<td onclick="alpha(this)">u</td>
+					<td onclick="alpha(this)">v</td>
+					<td onclick="alpha(this)">w</td>
+					<td onclick="alpha(this)">x</td>
+					<td onclick="alpha(this)">y</td>
+					<td onclick="alpha(this)">z</td>
+				</tr>
+			</table>
+			<br>
+		<input type="button" value="<<" id="lowerdiff"> </input>
+		<input type="text" id="diffbox"></input>
+		<input type="button" value=">>" id="incrdiff"></input>	</br>
+		<input type="button" value="New Game" id="newgame"></input>
+		</br>
+		<a href="#" onclick="showhidehelp()">New to cows and bulls?</a><br>
+		<textarea id="helpbox" rows=10 cols=40>You have a target word set by me.. make guesses and reach the target.
+		1 cow => 1 alphabet in your guess is present in target but not in same position
+		1 bull => 1 alphabet in your guess is present in target in exact same position
+		All the best !</textarea>
+		</div>
+	</body>
+</html>
